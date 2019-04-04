@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="camera-wrapper">
+    <button class="round-button" ion-button icon-only (click)="takeImage()">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </button>
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{surveillanceState}} Surveillance</ion-label>
+        <ion-toggle (ionChange)="toggleSurveillance($event)" checked="{{isSurveilling}}"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{hoursState}} Dark Hours</ion-label>
+        <ion-toggle (ionChange)="toggleHours($event)" checked="{{isDarkHours}}"></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card class="last-data-section">
+    <ion-card-title *ngIf="lastTime">Image taken {{lastTime | fromNow}}</ion-card-title>
+    <ion-card-content>
+      <img class="last-image" src="{{lastImage}}">
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="system-section">
+    <ion-card-title>Image Tags:</ion-card-title>
+    <ion-card-content>
+      {{lastImageData | json}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

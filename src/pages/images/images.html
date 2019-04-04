@@ -1,0 +1,14 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Images</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="image-container" *ngFor="let image of images" >
+    <p class="img-date">{{image.timestamp | momentDate}}</p>
+    <img src="{{image.imageUrl}}">
+  </ion-card>
+</ion-content>

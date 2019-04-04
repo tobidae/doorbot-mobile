@@ -1,0 +1,7 @@
+{
+  "name": "doorbot",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
